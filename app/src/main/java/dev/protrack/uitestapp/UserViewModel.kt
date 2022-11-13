@@ -2,9 +2,11 @@ package dev.protrack.uitestapp
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class UserViewModel : ViewModel() {
-    val authService = AuthService()
+@HiltViewModel
+class UserViewModel @Inject constructor(private val authService: AuthService) : ViewModel() {
 
     var name = mutableStateOf("No User")
 
