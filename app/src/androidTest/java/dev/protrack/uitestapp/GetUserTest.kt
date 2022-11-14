@@ -23,6 +23,6 @@ class GetUserTest {
            HomeScreen()
        }
 
-       composeTestRule.onNodeWithText("Real User").assertIsDisplayed()
+       composeTestRule.onNodeWithText("Fake User").assertIsDisplayed()
    }
 }
