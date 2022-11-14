@@ -11,7 +11,7 @@ import javax.inject.Singleton
 internal object AuthModules {
     @Provides
     @Singleton
-    fun provideAuthService(): AuthService {
-        return AuthService()
+    fun provideAuthService(): HttpAuthService {
+        return HttpAuthService()
     }
 }

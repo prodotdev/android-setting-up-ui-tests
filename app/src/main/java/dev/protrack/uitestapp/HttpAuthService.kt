@@ -1,6 +1,6 @@
 package dev.protrack.uitestapp
 
-class AuthService  {
+class HttpAuthService  {
     fun fetchUser(): String {
         return "Real User"
     }
