@@ -6,6 +6,7 @@ import androidx.compose.ui.test.onNodeWithText
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.every
+import io.mockk.verify
 import org.junit.Rule
 import org.junit.Test
 
@@ -27,5 +28,9 @@ class GetUserTest {
        }
 
        composeTestRule.onNodeWithText("Fake User").assertIsDisplayed()
+
+       verify {
+           mockAuthService.fetchUser()
+       }
    }
 }
