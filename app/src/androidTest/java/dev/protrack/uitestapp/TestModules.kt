@@ -16,7 +16,7 @@ import javax.inject.Singleton
 object TestModules {
     @Provides
     @Singleton
-    fun provideAuthService(): HttpAuthService {
-        return HttpAuthService()
+    fun provideAuthService(): AuthService {
+        return FakeAuthService()
     }
 }

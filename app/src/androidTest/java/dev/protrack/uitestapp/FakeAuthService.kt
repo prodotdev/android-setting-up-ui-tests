@@ -1,7 +1,7 @@
 package dev.protrack.uitestapp
 
-class HttpAuthService: AuthService  {
+class FakeAuthService: AuthService {
     override fun fetchUser(): String {
-        return "Real User"
+        return "Fake User"
     }
 }

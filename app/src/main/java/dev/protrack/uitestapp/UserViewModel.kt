@@ -6,11 +6,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class UserViewModel @Inject constructor(private val httpAuthService: HttpAuthService) : ViewModel() {
+class UserViewModel @Inject constructor(private val authService: AuthService) : ViewModel() {
 
     var name = mutableStateOf("No User")
 
     fun load() {
-        name.value = httpAuthService.fetchUser()
+        name.value = authService.fetchUser()
     }
 }
