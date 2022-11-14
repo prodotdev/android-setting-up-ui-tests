@@ -4,7 +4,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.components.SingletonComponent
 import dagger.hilt.testing.TestInstallIn
+import io.mockk.mockk
 import javax.inject.Singleton
+
+val mockAuthService = mockk<AuthService>(relaxed = true)
 
 @Module
 @TestInstallIn(
@@ -17,6 +20,7 @@ object TestModules {
     @Provides
     @Singleton
     fun provideAuthService(): AuthService {
-        return FakeAuthService()
+        return mockAuthService
     }
 }
+

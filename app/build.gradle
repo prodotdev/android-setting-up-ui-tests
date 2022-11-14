@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "dev.protrack.uitestapp"
-        minSdk 21
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -47,6 +47,10 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+
+    packagingOptions {
+        jniLibs.useLegacyPackaging = true
+    }
 }
 
 dependencies {
@@ -66,6 +70,8 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
     implementation("com.google.dagger:hilt-android:2.41")
     kapt("com.google.dagger:hilt-android-compiler:2.41")
+
+    androidTestImplementation "io.mockk:mockk-android:1.12.1"
 
     // For instrumentation tests
     androidTestImplementation  "com.google.dagger:hilt-android-testing:2.41"
